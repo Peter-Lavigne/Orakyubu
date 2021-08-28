@@ -71,8 +71,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Misc
-Trailer
-Steam\ Tools/sdk
+Trailer*
+Steam\ Tools*
 .DS_Store
 .vscode
 Assets/Project/Sounds/Soundtrack*
