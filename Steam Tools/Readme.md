@@ -1,7 +1,12 @@
 These tools are used to upload the game to steam.
 
-To upload a new build, copy a build folder containing `Windows`, `Mac`, and `Linux`
-subdirectories into the folder `sdk/tools/ContentBuilder/content`.
+Uploading a new build
+
+Create a build folder containing `Mac` and `Linux`
+subdirectories. When building, build those two games into
+their directories as `Orakyubu` and build windows as `Windows`
+
+Copy that folder into the folder `sdk/tools/ContentBuilder/content`.
 Make sure to overwrite all existing files.
 
 Then, cd into `sdk/tools/ContentBuilder/builder_osx`

@@ -8,10 +8,14 @@ public enum MenuState { Main, Extras, Credits };
 
 public class MainMenu : MonoBehaviour {
   public MenuState menuState;
-  public Text newGameText;
+  public GameObject newGameText;
+  public GameObject continueGameText;
 
   private void Awake() {
-    newGameText.text = System.IO.File.Exists(Application.persistentDataPath + "/Progress.json") ? "CONTINUE" : "NEW GAME";
+    if (System.IO.File.Exists(Application.persistentDataPath + "/Progress.json")) {
+      newGameText.SetActive(false);
+      continueGameText.SetActive(true);
+    }
   }
 
   public void OnClickNewGame() {

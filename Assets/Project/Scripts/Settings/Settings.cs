@@ -14,14 +14,31 @@ public class Settings : MonoBehaviour {
   public bool fullScreen;
   public bool invertX;
   public bool invertY;
+  public string language = "english";
 
   private string saveFilePath;
+  private Dictionary<string, Localizations> localizations = new Dictionary<string, Localizations>();
+  private string[] languages = new string[] {
+    "english",
+    "schinese",
+    "spanish",
+    "french"
+  };
 
   void Awake() {
     saveFilePath = Application.persistentDataPath + "/Settings.json";
     ResetToDefaults();
     Load();
     Save();
+
+    try {
+      foreach (string l in languages) {
+        string filePath = Application.streamingAssetsPath + "/Localization/" + l + ".json";
+        localizations[l] = JsonUtility.FromJson<Localizations>(
+          System.IO.File.ReadAllText(filePath)
+        );
+      }
+    } catch (FileNotFoundException e) {}
   }
 
   void Start() {
@@ -72,5 +89,15 @@ public class Settings : MonoBehaviour {
 
   public void UpdateFullScreen() {
     Screen.fullScreen = fullScreen;
+  }
+
+  public string GetLocalization(string key) {
+    if (!localizations.ContainsKey(language)) return "";
+    return localizations[language].GetLocalizationByName(key);
+  }
+
+  public void SetLangauge(string _language) {
+    language  = _language;
+    Save();
   }
 }

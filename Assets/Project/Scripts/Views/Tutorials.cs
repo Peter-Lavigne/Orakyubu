@@ -9,6 +9,7 @@ public class Tutorials : MonoBehaviour {
   public Model model;
   public View view;
   public GameObject tutorialPlanePrefab;
+  public Settings settings;
 
   private GameObject GetPlaneView(string levelName, int cubeIndex, int faceIndex) {
     return view.GetViewByModel(
@@ -78,7 +79,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-3, 3),
       5,
-      "C L I C K   O N   T H E\nC I R C L E   T O   S E L E C T   I T",
+      settings.GetLocalization("tutorial_move_circle_1"),
       TextAnchor.MiddleLeft
     );
     PlaceTutorial(
@@ -87,7 +88,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-2, -3),
       6,
-      "U S E   W-A-S-D   O R   T H E   A R R O W\nK E Y S   T O   M O V E   I T",
+      settings.GetLocalization("tutorial_move_circle_2"),
       TextAnchor.MiddleRight
     );
     PlaceTutorial(
@@ -96,7 +97,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-3, 3),
       6,
-      "H O L D   T H E   R I G H T   M O U S E\nB U T T O N   ( O R   S H I F T )",
+      settings.GetLocalization("tutorial_camera_1"),
       TextAnchor.MiddleLeft
     );
     PlaceTutorial(
@@ -105,7 +106,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-2, -3),
       6,
-      "T H E N   M O V E   T H E   M O U S E\nT O   P A N   T H E   C A M E R A",
+      settings.GetLocalization("tutorial_camera_2"),
       TextAnchor.MiddleRight
     );
     PlaceTutorial(
@@ -114,7 +115,7 @@ public class Tutorials : MonoBehaviour {
       2,
       new Vector2Int(-3, 3),
       4,
-      "U S E   T H E   S C R O L L\nW H E E L   T O   Z O O M",
+      settings.GetLocalization("tutorial_zoom"),
       TextAnchor.MiddleLeft
     );
     PlaceTutorial(
@@ -123,7 +124,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-3, -1),
       7,
-      "U S E   T H E   U P P E R   L E F T\nC O N T R O L S   T O   R E S E T   O R   U N D O",
+      settings.GetLocalization("tutorial_reset_undo_1"),
       TextAnchor.MiddleLeft
     );
     PlaceTutorial(
@@ -132,7 +133,7 @@ public class Tutorials : MonoBehaviour {
       1,
       new Vector2Int(-3, -1),
       7,
-      "Y O U   C A N   A L S O   P R E S S   \" R \"   T O\nR E S E T   O R   \" Z \"   T O   U N D O",
+      settings.GetLocalization("tutorial_reset_undo_2"),
       TextAnchor.MiddleLeft
     );
     PlaceTutorial(
@@ -141,7 +142,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-3, 3),
       5,
-      "C L I C K   O N   A   C U B E\nT O   S E L E C T   I T",
+      settings.GetLocalization("tutorial_move_cube_1"),
       TextAnchor.MiddleLeft
     );
     PlaceTutorial(
@@ -150,7 +151,7 @@ public class Tutorials : MonoBehaviour {
       0,
       new Vector2Int(-2, -3),
       6,
-      "U S E   W-A-S-D   O R   T H E   A R R O W\nK E Y S   T O   M O V E   I T",
+      settings.GetLocalization("tutorial_move_cube_2"),
       TextAnchor.MiddleRight
     );
   }
