@@ -1,6 +1,6 @@
 These tools are used to upload the game to steam.
 
-Uploading a new build
+# Uploading a new build
 
 Create a build folder containing `Mac` and `Linux`
 subdirectories. When building, build those two games into
@@ -28,3 +28,7 @@ Rename this build (Beta-003, Prod-001, etc)
 Set it to the default build
 
 Navigate to the public tab and publish changes
+
+Optional: Post in Discord
+
+Optional: Create an announcement in steam (large updates)

@@ -22,7 +22,8 @@ public class Settings : MonoBehaviour {
     "english",
     "schinese",
     "spanish",
-    "french"
+    "french",
+    "japanese"
   };
 
   void Awake() {
