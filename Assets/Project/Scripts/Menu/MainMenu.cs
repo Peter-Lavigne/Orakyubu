@@ -10,11 +10,25 @@ public class MainMenu : MonoBehaviour {
   public MenuState menuState;
   public GameObject newGameText;
   public GameObject continueGameText;
+  public GameObject exitButton;
+  public List<GameObject> gameObjectsToMoveDownInWebGl;
 
   private void Awake() {
     if (System.IO.File.Exists(Application.persistentDataPath + "/Progress.json")) {
       newGameText.SetActive(false);
       continueGameText.SetActive(true);
+    }
+
+    if (Application.platform == RuntimePlatform.WebGLPlayer) {
+      exitButton.SetActive(false);
+      for (int index = 0; index < gameObjectsToMoveDownInWebGl.Count; index++) {
+        GameObject gameObject = gameObjectsToMoveDownInWebGl[index];
+        gameObject.transform.localPosition = new Vector3(
+          gameObject.transform.localPosition.x,
+          gameObject.transform.localPosition.y - 40f * (index + 1),
+          gameObject.transform.localPosition.z
+        );
+      }
     }
   }
 

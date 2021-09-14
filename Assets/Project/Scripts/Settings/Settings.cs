@@ -35,9 +35,9 @@ public class Settings : MonoBehaviour {
 
     try {
       foreach (string l in languages) {
-        string filePath = Application.streamingAssetsPath + "/Localization/" + l + ".json";
+        string filePath = "Localization/" + l;
         localizations[l] = JsonUtility.FromJson<Localizations>(
-          System.IO.File.ReadAllText(filePath)
+          Resources.Load<TextAsset>(filePath).text
         );
       }
     } catch (FileNotFoundException e) {}
@@ -90,7 +90,9 @@ public class Settings : MonoBehaviour {
   }
 
   public void UpdateFullScreen() {
-    Screen.fullScreen = fullScreen;
+    if (Application.platform != RuntimePlatform.WebGLPlayer) {
+      Screen.fullScreen = fullScreen;
+    }
   }
 
   public string GetLocalization(string key) {

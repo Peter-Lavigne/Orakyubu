@@ -11435,6 +11435,11 @@ MonoBehaviour:
   menuState: 0
   newGameText: {fileID: 141420157}
   continueGameText: {fileID: 371376896}
+  exitButton: {fileID: 2066632153}
+  gameObjectsToMoveDownInWebGl:
+  - {fileID: 1875908387}
+  - {fileID: 509626993}
+  - {fileID: 570015324}
 --- !u!4 &1135027632
 Transform:
   m_ObjectHideFlags: 0

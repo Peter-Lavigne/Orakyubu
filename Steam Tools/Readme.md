@@ -1,6 +1,6 @@
 These tools are used to upload the game to steam.
 
-# Uploading a new build
+# Uploading a new build (steam)
 
 Create a build folder containing `Mac` and `Linux`
 subdirectories. When building, build those two games into
@@ -32,3 +32,11 @@ Navigate to the public tab and publish changes
 Optional: Post in Discord
 
 Optional: Create an announcement in steam (large updates)
+
+# Uploading a new build (itch)
+
+Create a build named `WebGL`.
+
+Zip it.
+
+Upload to itch.io.

@@ -114,9 +114,10 @@ public class Model : MonoBehaviour {
       );
     } catch (FileNotFoundException e) {}
 
-    string jsonFile = Globals.mode == Mode.main ? "/StartingModel.json" : "/Editor.json";
-
-    levels = JsonUtility.FromJson<SavableModel>(System.IO.File.ReadAllText(Application.streamingAssetsPath + jsonFile)).levels;
+    string filePath = Globals.mode == Mode.main ? "StartingModel" : "Editor";
+    levels = JsonUtility.FromJson<SavableModel>(
+      Resources.Load<TextAsset>(filePath).text
+    ).levels;
 
     if (Globals.mode == Mode.main) {
       foreach (string levelName in progress.completedLevels) {

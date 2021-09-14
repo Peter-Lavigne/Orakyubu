@@ -12,11 +12,23 @@ public class SettingsMenu : MonoBehaviour {
   public GameObject invertXToggle;
   public GameObject invertYToggle;
 
+  public List<GameObject> gameObjectsToMoveUpInWebGl;
+
   void Awake() {
     settings.settingsUpdatedEvent.AddListener(CopySettings);
   }
 
   void Start() {
+    if (Application.platform == RuntimePlatform.WebGLPlayer) {
+      fullScreenToggle.SetActive(false);
+      foreach (GameObject gameObject in gameObjectsToMoveUpInWebGl) {
+        gameObject.transform.localPosition = new Vector3(
+          gameObject.transform.localPosition.x,
+          gameObject.transform.localPosition.y + 10f,
+          gameObject.transform.localPosition.z
+        );
+      }
+    }
     CopySettings();
   }
 

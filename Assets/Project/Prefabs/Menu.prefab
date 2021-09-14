@@ -4597,6 +4597,12 @@ MonoBehaviour:
   fullScreenToggle: {fileID: 1205692137}
   invertXToggle: {fileID: 505516861}
   invertYToggle: {fileID: 36212460}
+  gameObjectsToMoveUpInWebGl:
+  - {fileID: 4058336556057506206}
+  - {fileID: 5927422614024354301}
+  - {fileID: 4302448966257036857}
+  - {fileID: 505516861}
+  - {fileID: 36212460}
 --- !u!114 &706726489
 MonoBehaviour:
   m_ObjectHideFlags: 0
