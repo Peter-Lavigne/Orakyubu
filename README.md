@@ -1,6 +1,6 @@
 # Orakyubu
 
-This is the source code for Orakyubu, a game about 2D puzzles in 3D space. You can play it on Steam [here](https://store.steampowered.com/app/1654900/Orakyubu/).
+This is the source code for Orakyubu, a game about 2D puzzles in 3D space. You can play it on Steam [here](https://store.steampowered.com/app/1654900/Orakyubu/) or on itch.io [here](https://peterlavigne.itch.io/orakyubu).
 
 The Unity version used is `2020.3.11f1 Personal`.
 
