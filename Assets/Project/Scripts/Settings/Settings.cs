@@ -101,7 +101,7 @@ public class Settings : MonoBehaviour {
   }
 
   public void SetLangauge(string _language) {
-    language  = _language;
+    // language  = _language;
     Save();
   }
 }

@@ -75,6 +75,11 @@ class ControllerHelpers {
       .IndexOf(levelName);
   }
 
+  public static int LevelNumber(string levelName) {
+    if (levelName == "Final Level") return 25;
+    return ControllerHelpers.levelOrder.SelectMany(l => l).ToList().IndexOf(levelName) + 1;
+  }
+
   public static int LevelCountInColumn(string levelName) {
     return ControllerHelpers
       .levelOrder

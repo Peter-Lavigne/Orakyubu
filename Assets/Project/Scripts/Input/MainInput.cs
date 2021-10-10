@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 public class MainInput : MonoBehaviour {
   public Controller controller;
@@ -19,8 +20,16 @@ public class MainInput : MonoBehaviour {
   private bool moveCameraButtonHeld = false;
   public void SetMoveCameraButtonHeld(bool _moveCameraButtonHeld) { moveCameraButtonHeld = _moveCameraButtonHeld; }
 
+  [DllImport("__Internal")]
+  private static extern void ReplayEvent(int level);
+
   public void Reset() {
     if (view.levelCompletedPause.Animating()) return;
+
+    #if UNITY_WEBGL
+    ReplayEvent(ControllerHelpers.LevelNumber(controller.GetCurrentLevel().name));
+    #endif
+
     controller.Reset();
   }
 

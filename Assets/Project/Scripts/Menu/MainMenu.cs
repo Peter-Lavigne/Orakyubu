@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 public enum MenuState { Main, Extras, Credits };
 
@@ -32,7 +33,14 @@ public class MainMenu : MonoBehaviour {
     }
   }
 
+  [DllImport("__Internal")]
+  private static extern void StartGameEvent();
+
   public void OnClickNewGame() {
+    #if UNITY_WEBGL
+    StartGameEvent();
+    #endif
+
     Globals.mode = Mode.main;
     SceneManager.LoadScene("Main",  LoadSceneMode.Single);
   }

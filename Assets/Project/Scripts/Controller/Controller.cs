@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 public enum EditObject {
   Player2D,
@@ -86,8 +87,16 @@ public class Controller : MonoBehaviour {
     controlModeChangedEvent.Invoke(controlMode);
   }
 
+  [DllImport("__Internal")]
+  private static extern void StartLevelEvent(int level);
+
   public void OnClickLevel(Level level) {
     currentLevel = level;
+
+    #if UNITY_WEBGL
+    StartLevelEvent(ControllerHelpers.LevelNumber(level.name));
+    #endif
+
     currentLevelChangedEvent.Invoke(currentLevel);
     SetControlMode(ControlMode.Puzzle);
   }

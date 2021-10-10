@@ -9,3 +9,7 @@ Some files have been ignored in order to upload this repo to Github:
 2. The trailer was ignored because the file size was too large for GitHub.
 3. The Steam SDK was ignored because I don't know if it's legal for me to host it here.
 
+## Releasing Coolmathgames
+
+After creating a build, copy the `index.html` and `Build/cmg.js` files from the `coolmathgames-002` build.
+
